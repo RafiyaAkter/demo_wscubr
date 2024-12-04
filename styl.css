@@ -1,0 +1,1297 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color:#101f34 ;
+    color: #ededed;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.logo {
+    font-size: 30px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1px;
+    cursor: pointer;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+
+.logo span {
+    color: rgb(0, 179, 255);
+}
+
+/* Navbar styling */
+.navbar a {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    margin-left: 35px;
+    position: relative;
+    transition: 0.3s;
+    opacity: 0;
+    animation: slideTop 0.5s ease forwards;
+    animation-delay: calc(.2s*var(--i));
+}
+
+/* Hover effects for navbar links */
+.navbar a:hover {
+    color: orangered;
+    text-shadow: 0 0 10px rgba(18, 247, 255, 0.6), 0 0 20px rgba(18, 247, 255, 0.6),
+        0 0 30px rgba(18, 247, 255, 0.6), 0 0 40px rgba(18, 247, 255, 0.6),
+        0 0 70px rgba(18, 247, 255, 0.6), 0 0 80px rgba(18, 247, 255, 0.6),
+        0 0 100px rgba(18, 247, 255, 0.6), 0 0 150px rgba(18, 247, 255, 0.6);
+}
+
+/* Mobile Menu Icon */
+#menu-icon {
+    font-size: 2rem;
+    z-index: 10001;
+    cursor: pointer;
+    background: rgb(0, 153, 255);
+    border-radius: 50%;
+    color: white;
+    display: none;
+}
+
+/* Header animations */
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Media Query for responsiveness */
+@media (max-width: 768px) {
+    .header {
+        padding: 20px 5%;
+    }
+    .navbar {
+        display: none; /* Hide the navbar on mobile */
+    }
+    #menu-icon {
+        display: block; /* Show the menu icon on mobile */
+    }
+}
+.home {
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+    height: 100vh;
+    background: url('purple/Illustrated/Mountain/Desktop/Wallpaper.png') no-repeat center;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 70px 10% 0;
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 0;
+    animation:slideBottom 1s ease forwards;
+    
+   
+}
+
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 30px;
+    animation: slideTop 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.home-content h3 span {
+    color: #0ef;
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0;
+    opacity:0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-img .img-box {
+    position: relative;
+    width: 32vw;
+    height: 32vw;
+    border-radius: 50%;
+    padding: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Image box and item styling */
+.home-img .img-box {
+    position: relative;
+    width: 32vw;
+    height: 32vw;
+    border-radius: 50%;
+    padding: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out; /* Animation to fade the image in */
+}
+
+/* Image inside the box */
+.img-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    animation: scaleUp 2s ease-in-out infinite; /* Pulsating effect */
+}
+
+/* Animation for scaling up and down */
+@keyframes scaleUp {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Hover effect on the image */
+.img-item img:hover {
+    transform: scale(1.1) rotate(5deg); /* Slight zoom and rotation on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
+}
+
+/* Fade-in animation for image box */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.home-content p {
+    font-size: 20px;
+    opacity: 0;
+    animation:  slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+.home-sci a {
+    display: inline-flex;
+    justify-items: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 3px solid #0ef;
+    border-radius: 50%;
+    font-size: 2rem;
+    color: #0ef;
+    text-decoration: none;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s*var(--1)) ;
+    margin: 30px 15px 30px 0;
+}
+.home-sci a:hover {
+    background: #0ef;
+    color: #081b29;
+    box-shadow: 0 0 30px #0ef;
+
+}
+.email-link {
+    text-decoration: none; /* Removes the underline from the link */
+    font-family: Arial, sans-serif; /* Sets the font */
+    font-size: 16px; /* Adjusts the font size */
+    font-weight: bold; /* Makes the text bold */
+  }
+  
+  .email-link span {
+    color: rgb(0, 234, 255); /* Changes the text color */
+    transition: color 0.3s ease; /* Adds a smooth transition effect for color changes */
+  }
+  
+  .email-link:hover span {
+    color: rgb(255, 100, 100); /* Changes color when the link is hovered over */
+  }
+  
+
+/* Style for the buttons */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    margin: 10px 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(0, 153, 255);
+    border: 2px solid transparent;
+    border-radius: 20px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button hover effect */
+.btn:hover {
+    color: rgb(0, 153, 255);
+    background-color: white;
+    border-color: rgb(0, 153, 255);
+}
+
+/* Animation on hover (border highlight) */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 153, 255, 0.2);
+    z-index: -1;
+    transform: scale(0);
+    transition: transform 0.4s ease-in-out;
+    border-radius: 25px;
+}
+
+.btn:hover::before {
+    transform: scale(1);
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+}
+.about-text h2{
+    font-size:40px;
+}
+.about-text h2 span{
+    color: #0ef;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    color: var(--text-color);
+    border: 2px solid var(--main-color); 
+    border-radius: 5px; 
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--hover-color); 
+    color: #fff;
+    border-color: var(--hover-color); 
+    box-shadow: 0 0 1rem var(--main-color); 
+}
+
+.btn  {
+    font-size: 24px;
+    color: #0ef;
+    margin-bottom: 10px;
+}
+/* About Section Styling */
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:2rem;
+    background:var(--snd-bg-color);
+}
+.about-img img {
+    width: 100%;
+    height: auto;
+    max-width: 260px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(75, 92, 100, 0.1);
+    animation: float 4s ease-in-out infinite; /* Continuous floating animation */
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+.about-content {
+    max-width: 400px;
+    padding-left: 30px;
+}
+
+.about-content h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.about-content h2 span {
+    color: rgb(0, 179, 255); /* Highlight color for "ABOUT" */
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 25px;
+    margin: 2rem 0 3 rem;
+}
+
+.about-content .btn {
+    padding: 12px 30px;
+    background-color: rgb(0, 179, 255);
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.about-content .btn:hover {
+    background-color: #007bb5;
+}
+/* General styles for the timeline */
+.timeline {
+  width: 80%;
+  margin: 0 auto;
+  padding: 40px 0;
+  font-family: Arial, sans-serif;
+  color: #3d4a80;
+}
+
+.timeline-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.timeline-title h2 {
+  font-size: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #333;
+}
+
+.timeline-container {
+  position: relative;
+  padding-left: 40px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  background-color: #4c7aaf;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+.timeline-date {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #555;
+}
+
+.timeline-content {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-left: 30px;
+}
+
+.timeline-content h3 {
+  font-size: 1.5em;
+  color: #333;
+}
+
+.timeline-content h4 {
+  font-size: 1.2em;
+  color: #777;
+  margin-top: 5px;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  background-color: #f2f2f2;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  background-color: #e9f7fc;
+}
+
+/* Container styling */
+.timeline {
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.timeline-title h2 {
+    font-family: Helvetica, sans-serif;
+    color: #11a372;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Timeline item container */
+.timeline-container {
+    position: relative;
+    padding-left: 30px;
+    border-left: 2px solid #bababa;
+}
+
+/* Individual timeline items */
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+/* Date styling */
+.timeline-date {
+    font-weight: bold;
+    color: purple;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* Content styling */
+.timeline-content h4 {
+    font-size: 18px;
+    color: #11a372;
+    margin: 5px 0;
+}
+
+.timeline-content p {
+    font-size: 14px;
+    color: black;
+}
+
+/* Timeline circles */
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: #11a372;
+    border-radius: 50%;
+}
+/* Skill container styling */
+.skill {
+    padding: 2rem;
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background-color:#101f34 ;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    animation: fadeIn 1s ease-out;
+}
+
+.skill h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Circle progress bar container */
+.circle-bar {
+    position: relative;
+    display: inline-block;
+    margin: 1rem;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+/* Circle styling */
+.circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 10px solid transparent;
+    border-top-color: rgb(0, 234, 255); /* Default color */
+    animation: animateCircle 2s ease-in-out forwards;
+}
+
+.percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(0, 234, 255);
+}
+
+/* Animation for the circle */
+@keyframes animateCircle {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* Animation for each skill */
+.html, .css {
+    animation: animateCircle 2s ease-in-out forwards;
+    animation-delay: 0.5s;
+    border-top-color: #e34c26; /* HTML color */
+}
+
+.css {
+    border-top-color: #264de4; /* CSS color */
+}
+.javascript {
+    animation: animateCircle 2s ease-in-out forwards;
+    animation-delay: 3s;
+    border-top-color: #007396; /* Java color */
+}
+/* Technical Skills Section */
+.skills-section {
+    padding: 60px 10%;
+    background-color: #081b29;
+    color: white;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.skills-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: rgb(0, 234, 255);
+    animation: bounce 1s ease-in-out infinite alternate;
+}
+
+/* Skills Container */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Skill Card Styling */
+.skill-card {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    text-align: left;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effect */
+.skill-card:hover {
+    transform: translateY(-10px) rotate(-3deg);
+    box-shadow: 0 10px 20px rgba(0, 234, 255, 0.5);
+}
+
+/* Background Animation */
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(0, 234, 255, 0.15), transparent);
+    transform: rotate(0deg);
+    transition: transform 1s ease-in-out;
+    z-index: -1;
+}
+
+.skill-card:hover::before {
+    transform: rotate(30deg);
+}
+
+/* Skill Card Title */
+.skill-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: rgb(0, 234, 255);
+    animation: slideIn 1s ease-in-out forwards;
+}
+
+/* Skill Card Text */
+.skill-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    opacity: 0;
+    animation: fadeText 1.2s ease-in-out forwards;
+    animation-delay: 0.3s;
+}
+
+.skill-card .btn:active {
+    transform: translateY(2px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeText {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Other CSS rules for circle and percentage... */
+/* Work Section */
+.work {
+    padding: 60px 10%;
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+/* Section Heading */
+/* Work Section */
+.work {
+    padding: 60px 10%;
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 1s ease-in-out; /* Section entrance animation */
+}
+
+/* Section Heading */
+.work h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: rgb(0, 234, 255);
+    animation: slideInDown 1s ease-out; /* Heading slide animation */
+}
+
+/* Styling for the Link List */
+.work ul {
+    list-style: none;
+    padding: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.2s ease forwards;
+}
+
+.work li {
+    margin: 20px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.2s ease forwards;
+}
+
+/* Adding delay for list items */
+.work li:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.work li:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.work li:nth-child(3) {
+    animation-delay: 0.9s;
+}
+
+/* Button Styling */
+.work .btn {
+    background-color: rgb(0, 234, 255);
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    animation: bounceIn 1.5s ease-out;
+}
+
+.work .btn:hover {
+    background-color: #3498db;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Hover effect on button */
+.work .btn:active {
+    transform: translateY(2px);
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* Contact Section */
+.contact-section {
+    background: linear-gradient(120deg,#081b29, #6cf);
+    padding: 60px 20px;
+    text-align: center;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-section p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.contact-container form {
+    max-width: 400px;
+    width: 100%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-container form input,
+.contact-container form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.contact-container form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #6cf;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.contact-container form button:hover {
+    background: #4f9;
+}
+
+.social-links {
+    max-width: 400px;
+    text-align: left;
+}
+
+.social-links h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.social-links a i {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.social-links a:hover {
+    color: #000;
+}
+/* Enable smooth scrolling for the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Styles */
+nav a {
+    text-decoration: none;
+    color: #081b29; 
+    padding: 15px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+nav a.active {
+    color: rgb(0, 153, 255);
+}
+
+/* Sections */
+section {
+    padding: 100px 20px;
+    height: 100vh;
+    text-align: center;
+}
+
+section#home {
+    background-color: #081b29; 
+}
+
+/* Other section styling */.contact-section {
+    background: linear-gradient(120deg,#081b29, #6cf);
+    padding: 60px 20px;
+    text-align: center;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-section p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.contact-container form {
+    max-width: 400px;
+    width: 100%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-container form input,
+.contact-container form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.contact-container form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #6cf;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.contact-container form button:hover {
+    background: #4f9;
+}
+
+.social-links {
+    max-width: 400px;
+    text-align: left;
+}
+
+.social-links h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.social-links a i {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.social-links a:hover {
+    color: #000;
+}
+/* Enable smooth scrolling for the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Styles */
+nav a {
+    text-decoration: none;
+    color: #081b29; 
+    padding: 15px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+nav a.active {
+    color: rgb(0, 153, 255);
+}
+
+/* Sections */
+section {
+    padding: 100px 20px;
+    height: 100vh;
+    text-align: center;
+}
+
+section#home {
+    background-color: #081b29; 
+}
+
+/* Contact Section Styling */
+.contact-section {
+    background: linear-gradient(120deg, #081b29, #6cf);
+    padding: 60px 20px;
+    text-align: center;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Section Heading */
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    animation: slideIn 1s ease-in-out;
+}
+
+/* Paragraph Styling */
+.contact-section p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #fff;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+/* Form Container Styling */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+/* Form Styling */
+.contact-container form {
+    max-width: 400px;
+    width: 100%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.5s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+/* Input and Textarea Styling */
+.contact-container form input,
+.contact-container form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-container form input:focus,
+.contact-container form textarea:focus {
+    border-color: #6cf;
+    box-shadow: 0 0 8px rgba(0, 153, 255, 0.8);
+}
+
+/* Button Styling */
+.contact-container form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #6cf;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.contact-container form button:hover {
+    background: #4f9;
+    transform: translateY(-3px);
+}
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
